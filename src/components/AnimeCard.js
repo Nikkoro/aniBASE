@@ -12,8 +12,9 @@ export const AnimeCard = ({ anime, type }) => {
                 </h3>
             )}
             <div className="overlay"></div>
-            <img src={anime.image_url} alt={`${anime.title} Poster`} />
-
+            <a href={anime.url} target="_blank">
+                <img src={anime.image_url} alt={`${anime.title} Poster`} />
+            </a>
             <AnimeControls type={type} anime={anime} />
         </div>
     );

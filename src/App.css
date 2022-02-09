@@ -97,6 +97,7 @@ body {
     display: inline-block;
     border: none;
     font-size: 1rem;
+    transform: scale(1);
     transition: all 0.3s ease;
     line-height: 1.1;
 }
@@ -106,6 +107,7 @@ body {
     color: var(--white);
     opacity: 1;
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .btn:disabled {
@@ -221,6 +223,10 @@ header .nav-links li:last-child {
     margin: 0;
 }
 
+.result-card .info a {
+    text-decoration: none;
+}
+
 .result-card .info .release-date {
     font-size: 1.25rem;
     font-weight: 300;
@@ -298,6 +304,11 @@ header .nav-links li:last-child {
     position: relative;
     border: 0;
     display: block;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+.anime-card:hover {
+    transform: scale(1.1);
 }
 
 .anime-card img {
@@ -308,6 +319,7 @@ header .nav-links li:last-child {
 }
 
 .anime-card .overlay {
+    pointer-events: none;
     position: absolute;
     top: 0;
     left: 0;

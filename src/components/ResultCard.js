@@ -29,7 +29,9 @@ export const ResultCard = ({ anime }) => {
                 <div className="header">
                     <h3 className="release-date">
                         <Moment format="YYYY">{anime.start_date}</Moment>
-                        <h3 className="title">{anime.title}</h3>
+                        <a href={anime.url} target="_blank">
+                            <h3 className="title">{anime.title}</h3>
+                        </a>
                     </h3>
                     <h3 className="score">
                         Score: <strong>{anime.score}</strong>
