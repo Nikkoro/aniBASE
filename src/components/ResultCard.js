@@ -50,7 +50,7 @@ export const ResultCard = ({ anime }) => {
                         disabled={watchedDisabled}
                         onClick={() => addToWatched(anime)}
                     >
-                        Add to Watched
+                        Mark as Completed
                     </button>
                 </div>
             </div>
