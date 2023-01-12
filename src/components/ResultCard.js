@@ -19,7 +19,12 @@ export const ResultCard = ({ anime }) => {
     <div className="result-card">
       <div className="poster-wrapper">
         {anime.images.jpg.image_url ? (
-          <img src={anime.images.jpg.image_url} alt={`${anime.title} Poster`} />
+          <a href={anime.url} target="_blank">
+            <img
+              src={anime.images.jpg.image_url}
+              alt={`${anime.title} Poster`}
+            />
+          </a>
         ) : (
           <div className="filler-poster"></div>
         )}
@@ -28,7 +33,7 @@ export const ResultCard = ({ anime }) => {
       <div className="info">
         <div className="header">
           <h3 className="release-date">
-            <Moment format="YYYY">{anime.start_date}</Moment>
+            <Moment format="YYYY">{anime.aired.from}</Moment>
             <a href={anime.url} target="_blank">
               <h3 className="title">{anime.title}</h3>
             </a>

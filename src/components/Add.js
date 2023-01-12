@@ -9,9 +9,7 @@ export const Add = () => {
     e.preventDefault();
 
     setQuery(e.target.value);
-    await fetch(
-      `https://api.jikan.moe/v4/anime?q=${e.target.value}&order_by=title&sort=desc&limit=20`
-    )
+    await fetch(`https://api.jikan.moe/v4/anime?q=${e.target.value}&limit=20`)
       .then((res) => res.json())
       .then((data) => {
         setResults(data.data);
