@@ -24,7 +24,7 @@ export const Header = () => {
 
           <ul className={`nav-links ${isNavOpen ? "active" : ""}`}>
             <li>
-              <Link to="/">Currently watching</Link>
+              <Link to="/">Watching</Link>
             </li>
 
             <li>

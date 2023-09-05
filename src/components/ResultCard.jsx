@@ -35,7 +35,13 @@ export const ResultCard = ({ anime }) => {
           <h3 className="release-date">
             <Moment format="YYYY">{anime.aired.from}</Moment>
             <a href={anime.url} target="_blank">
-              <h3 className="title">{anime.title}</h3>
+              {anime.title.length <= 30 ? (
+                <h3 className="title"> {anime.title.substring(0, 30)}</h3>
+              ) : (
+                <h3 className="title">
+                  {anime.title.substring(0, 27) + "..."}
+                </h3>
+              )}
             </a>
           </h3>
           <h3 className="score">
@@ -43,27 +49,27 @@ export const ResultCard = ({ anime }) => {
           </h3>
           {anime.synopsis && anime.synopsis.length > 150 ? (
             <h3 className="synopsis">
-              {anime.synopsis.substring(0, 150) + "..."}
+              {anime.synopsis.substring(0, 200) + "..."}
             </h3>
           ) : null}
         </div>
+      </div>
 
-        <div className="controls">
-          <button
-            className="btn"
-            disabled={watchlistDisabled}
-            onClick={() => addToWatchlist(anime)}
-          >
-            Add to Watchlist
-          </button>
-          <button
-            className="btn"
-            disabled={watchedDisabled}
-            onClick={() => addToWatched(anime)}
-          >
-            Mark as Completed
-          </button>
-        </div>
+      <div className="controls">
+        <button
+          className="btn"
+          disabled={watchlistDisabled}
+          onClick={() => addToWatchlist(anime)}
+        >
+          +Watchlist
+        </button>
+        <button
+          className="btn"
+          disabled={watchedDisabled}
+          onClick={() => addToWatched(anime)}
+        >
+          +Completed
+        </button>
       </div>
     </div>
   );
