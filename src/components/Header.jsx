@@ -1,34 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
-    return (
-        <header>
-            <div className="container">
-                <div className="inner-content">
-                    <div className="brand">
-                        <Link to="/">
-                            ani<strong>BASE</strong>
-                        </Link>
-                    </div>
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
-                    <ul className="nav-links">
-                        <li>
-                            <Link to="/">Currently watching</Link>
-                        </li>
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
 
-                        <li>
-                            <Link to="/watched">Completed</Link>
-                        </li>
+  return (
+    <header>
+      <div className="container">
+        <div className="inner-content">
+          <div className="brand">
+            <Link to="/">
+              ani<strong>BASE</strong>
+            </Link>
+          </div>
 
-                        <li>
-                            <Link to="/add" className="btn btn-main">
-                                + Add
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-    );
+          <div className="menu-icon" onClick={toggleNav}>
+            &#9776;
+          </div>
+
+          <ul className={`nav-links ${isNavOpen ? "active" : ""}`}>
+            <li>
+              <Link to="/">Currently watching</Link>
+            </li>
+
+            <li>
+              <Link to="/watched">Completed</Link>
+            </li>
+
+            <li>
+              <Link to="/add" className="btn btn-main">
+                Search
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  );
 };
