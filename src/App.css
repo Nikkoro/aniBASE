@@ -364,7 +364,7 @@ header .nav-links li:last-child {
   background-color: var(--green);
   padding: 5px 15px;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 999px;
   color: #fff;
 }
