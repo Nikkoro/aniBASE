@@ -35,12 +35,10 @@ export const ResultCard = ({ anime }) => {
           <h3 className="release-date">
             <Moment format="YYYY">{anime.aired.from}</Moment>
             <a href={anime.url} target="_blank">
-              {anime.title.length <= 30 ? (
-                <h3 className="title"> {anime.title.substring(0, 30)}</h3>
+              {anime.title.length ? (
+                <h3 className="title"> {anime.title}</h3>
               ) : (
-                <h3 className="title">
-                  {anime.title.substring(0, 27) + "..."}
-                </h3>
+                <h3 className="title">Missing title</h3>
               )}
             </a>
           </h3>
@@ -51,7 +49,9 @@ export const ResultCard = ({ anime }) => {
             <h3 className="synopsis">
               {anime.synopsis.substring(0, 200) + "..."}
             </h3>
-          ) : null}
+          ) : (
+            <h3 className="synopsis">No description</h3>
+          )}
         </div>
       </div>
 
