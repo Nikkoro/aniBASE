@@ -19,7 +19,7 @@ export const Header = () => {
           </div>
 
           <div className="menu-icon" onClick={toggleNav}>
-            <i class="fas fa-bars"></i>
+            <i className="fas fa-bars"></i>
           </div>
 
           <ul
