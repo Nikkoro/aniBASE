@@ -19,10 +19,13 @@ export const Header = () => {
           </div>
 
           <div className="menu-icon" onClick={toggleNav}>
-            &#9776;
+            <i class="fas fa-bars"></i>
           </div>
 
-          <ul className={`nav-links ${isNavOpen ? "active" : ""}`}>
+          <ul
+            className={`nav-links ${isNavOpen ? "active" : ""}`}
+            onClick={toggleNav}
+          >
             <li>
               <Link to="/">Watching</Link>
             </li>
