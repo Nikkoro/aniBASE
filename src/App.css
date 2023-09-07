@@ -399,7 +399,8 @@ header .nav-links li:last-child {
 
 .anime-card img {
   width: 100%;
-  /* height: 80%; */
+  height: 80%;
+  object-fit: cover;
   display: block;
   border-radius: 20px;
 }
