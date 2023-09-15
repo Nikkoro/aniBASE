@@ -61,14 +61,14 @@ export const ResultCard = ({ anime }) => {
           disabled={watchlistDisabled}
           onClick={() => addToWatchlist(anime)}
         >
-          +Watchlist
+          <i class="fas fa-plus fa-sm"></i> Watchlist
         </button>
         <button
           className="btn"
           disabled={watchedDisabled}
           onClick={() => addToWatched(anime)}
         >
-          +Completed
+          <i class="fas fa-plus fa-sm"></i> Completed
         </button>
       </div>
     </div>
